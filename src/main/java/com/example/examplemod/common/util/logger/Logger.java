@@ -1,4 +1,4 @@
-package com.example.examplemod.util.logger;
+package com.example.examplemod.common.util.logger;
 
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
