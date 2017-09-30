@@ -10,10 +10,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = Refrence.MODID, version = Refrence.VERSION)
 public class ExampleMod
 {
-
-
-
-
+    //move to develop
 
     
     @EventHandler
