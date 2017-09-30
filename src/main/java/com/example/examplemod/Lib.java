@@ -1,24 +1,24 @@
 package com.example.examplemod;
 
-import com.example.examplemod.util.exception.OutdatedJavaException;
-import com.example.examplemod.util.logger.Logger;
+import com.example.examplemod.common.commands.CommandTPS;
+import com.example.examplemod.common.commands.CommandWithSubCommands;
+import com.example.examplemod.common.util.exception.OutdatedJavaException;
+import com.example.examplemod.common.util.logger.Logger;
 import com.google.common.base.Stopwatch;
-import net.minecraft.init.Blocks;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartedEvent;
+import net.minecraftforge.fml.common.event.*;
 import org.apache.commons.lang3.JavaVersion;
 import org.apache.commons.lang3.SystemUtils;
 
+import java.rmi.registry.Registry;
 import java.util.concurrent.TimeUnit;
 
 @Mod(modid = Refrence.MODID, version = Refrence.VERSION)
-public class ExampleMod
+public class Lib
 {
-    Logger logger = new Logger(Refrence.MOD_NAME);
+    public static Logger logger = new Logger(Refrence.MOD_NAME);
 
     
     @EventHandler
@@ -50,7 +50,10 @@ public class ExampleMod
     }
 
     @EventHandler
-    public void onServerStartup(FMLServerStartedEvent event){
+    public void onServerStartup(FMLServerStartingEvent event){
+        CommandWithSubCommands command = new CommandWithSubCommands();
+        command.addSubCommand(new CommandTPS());
+        event.registerServerCommand(command);
 
     }
 }
