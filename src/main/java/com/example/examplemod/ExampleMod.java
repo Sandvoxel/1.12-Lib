@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartedEvent;
 import org.apache.commons.lang3.JavaVersion;
 import org.apache.commons.lang3.SystemUtils;
 
@@ -34,11 +35,22 @@ public class ExampleMod
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        // some example code
-        System.out.println("DIRT BLOCK >> "+Blocks.DIRT.getUnlocalizedName());
+        final Stopwatch watch = Stopwatch.createStarted();
+        logger.info("Initialization ( started )");
+
+        logger.info("Initialization ( ended after " + watch.elapsed(TimeUnit.MILLISECONDS) + "ms )");
     }
+
     @EventHandler
     public void preInit(FMLPostInitializationEvent event){
+        final Stopwatch watch = Stopwatch.createStarted();
+        logger.info("Post Initialization ( started )");
+
+        logger.info("Post Initialization ( ended after " + watch.elapsed(TimeUnit.MILLISECONDS) + "ms )");
+    }
+
+    @EventHandler
+    public void onServerStartup(FMLServerStartedEvent event){
 
     }
 }
