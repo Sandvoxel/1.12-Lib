@@ -1,4 +1,4 @@
-package com.sandvoxel.testmod.common.blocks;
+package com.sandvoxel.testmod.common.itemblocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;

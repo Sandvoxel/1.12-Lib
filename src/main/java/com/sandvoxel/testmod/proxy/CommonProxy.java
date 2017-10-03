@@ -4,7 +4,7 @@ import com.sandvoxel.lib.common.registry.RegistryHelper;
 import com.sandvoxel.testmod.TestMod;
 import com.sandvoxel.testmod.common.blocks.TestBlock;
 
-import com.sandvoxel.testmod.common.blocks.TestItemBlock;
+import com.sandvoxel.testmod.common.itemblocks.TestItemBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
