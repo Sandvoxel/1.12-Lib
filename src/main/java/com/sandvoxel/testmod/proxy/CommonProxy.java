@@ -35,9 +35,7 @@ public class CommonProxy {
         TestMod.logger.info(RegistryHelper.getBlocks());
 
         for (Block block : RegistryHelper.getBlocks()){
-
             event.getRegistry().register(block);
-            TestMod.logger.info(block);
         }
 
     }
