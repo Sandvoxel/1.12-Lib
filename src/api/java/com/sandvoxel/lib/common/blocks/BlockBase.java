@@ -1,6 +1,7 @@
 package com.sandvoxel.lib.common.blocks;
 
 import com.sandvoxel.lib.API.util.IBlockRender;
+import com.sandvoxel.lib.Lib;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -9,6 +10,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
@@ -56,11 +59,13 @@ public class BlockBase extends Block implements IBlockRender {
 
 
     @Override
+    @SideOnly(Side.CLIENT)
     public void registerBlockRenderer() {
-
+        
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public void registerBlockItemRenderer() {
 
     }

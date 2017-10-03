@@ -1,6 +1,7 @@
 package com.sandvoxel.testmod.proxy;
 
 import com.sandvoxel.lib.common.registry.RegistryHelper;
+import com.sandvoxel.testmod.Reference;
 import com.sandvoxel.testmod.TestMod;
 import com.sandvoxel.testmod.common.blocks.TestBlock;
 
@@ -20,8 +21,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class CommonProxy {
 
     public void preInit(FMLPreInitializationEvent event){
-        RegistryHelper.addBlockToRegistry(TestBlock.class, TestItemBlock.class);
-
+        RegistryHelper.addBlockToRegistry(Reference.MODID, TestBlock.class, TestItemBlock.class);
     }
     public void init(FMLInitializationEvent event){
 
