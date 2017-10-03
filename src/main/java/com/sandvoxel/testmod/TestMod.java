@@ -24,6 +24,7 @@ public class TestMod {
     public static TestMod instance;
     public static Logger logger = new Logger(Reference.MODID);
 
+    @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
         final Stopwatch watch = Stopwatch.createStarted();
         logger.info("Pre Initialization - Started");

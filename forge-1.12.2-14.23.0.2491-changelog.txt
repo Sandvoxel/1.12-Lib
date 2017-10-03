@@ -7067,7 +7067,7 @@ Build 1.7.10-10.13.0.1150:
 		MinecraftForge/FML@7eb36a1481aea9f68fa46bc199195769b27d904b Merge branch 'bspkrsgui'
 		MinecraftForge/FML@96a7e14a45404449fb72af6d2d5e1efd30003318 Merge branch 'master' into mc179
 		MinecraftForge/FML@f45f18b1d71e1c1d12582faa337a19e73ed5fb18 Fix accessing guava from transformers
-		MinecraftForge/FML@8f7adced471951c798cfa6844b0abc176c93d19b Fix library issue. mojang auth requests newer libs, so we get them at dev time. But the mojang json doesn't refer them at runtime. So there's a lib mismatch. Fortunately all are available at mojang, so we can update the json.
+		MinecraftForge/FML@8f7adced471951c798cfa6844b0abc176c93d19b Fix library issue. mojang auth requests newer libs, so we get them at dev time. But the mojang json doesn't refer them at runtime. So there's a com.sandvoxel.lib mismatch. Fortunately all are available at mojang, so we can update the json.
 	cpw: Fix new method with Side.CLIENT when it shouldn't have it. Closes a bunch of reports of problems.
 	cpw: Clean patch cruft.
 	cpw: Fix mcp release number
@@ -7133,7 +7133,7 @@ Build 1.7.10_pre4-10.12.2.1142-prerelease:
 		MinecraftForge/FML@7eb36a1481aea9f68fa46bc199195769b27d904b Merge branch 'bspkrsgui'
 		MinecraftForge/FML@96a7e14a45404449fb72af6d2d5e1efd30003318 Merge branch 'master' into mc179
 		MinecraftForge/FML@f45f18b1d71e1c1d12582faa337a19e73ed5fb18 Fix accessing guava from transformers
-		MinecraftForge/FML@8f7adced471951c798cfa6844b0abc176c93d19b Fix library issue. mojang auth requests newer libs, so we get them at dev time. But the mojang json doesn't refer them at runtime. So there's a lib mismatch. Fortunately all are available at mojang, so we can update the json.
+		MinecraftForge/FML@8f7adced471951c798cfa6844b0abc176c93d19b Fix library issue. mojang auth requests newer libs, so we get them at dev time. But the mojang json doesn't refer them at runtime. So there's a com.sandvoxel.lib mismatch. Fortunately all are available at mojang, so we can update the json.
 
 Build 1.7.10_pre4-10.12.2.1141-prerelease:
 	cpw:
@@ -10145,7 +10145,7 @@ Build 1.5-7.7.0.559:
 		Testing cherry picking.
 	LexManos:
 		Sync up with FML, Will not run nativly as you need deobfusication_data.zip in your libs folder.
-		We have not setup the download for that yet, to make it yourself just zip joined.srg name it deobfusication_data.zip and put it in lib
+		We have not setup the download for that yet, to make it yourself just zip joined.srg name it deobfusication_data.zip and put it in com.sandvoxel.lib
 	LexManos: Not supposed to have debug stuff...
 	LexManos: Updated Forge to s13w09c
 	Christian: Fix up patches for FML, also, add in FML as a submodule rather than a zip
@@ -10320,7 +10320,7 @@ Build 13w05b-7.7.0.538-snapshot15:
 Build 13w05b-7.7.0.537-snapshot15:
 	LexManos:
 		Sync up with FML, Will not run nativly as you need deobfusication_data.zip in your libs folder.
-		We have not setup the download for that yet, to make it yourself just zip joined.srg name it deobfusication_data.zip and put it in lib
+		We have not setup the download for that yet, to make it yourself just zip joined.srg name it deobfusication_data.zip and put it in com.sandvoxel.lib
 
 Build 13w02b-7.7.0.536-snapshot15:
 	mehvids: Gave entities and tile entities access to the second render pass for translucency.
