@@ -8,7 +8,7 @@ import net.minecraft.item.ItemBlock;
  */
 public class TestItemBlock extends ItemBlock {
     public TestItemBlock() {
-        super(new NiggerFaggot());
+        super(new TestBlock());
         setRegistryName("wdadawdawd");
     }
 }
