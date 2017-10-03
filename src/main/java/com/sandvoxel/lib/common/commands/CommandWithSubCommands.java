@@ -1,6 +1,6 @@
-package com.example.examplemod.common.commands;
+package com.sandvoxel.lib.common.commands;
 
-import com.example.examplemod.common.util.ModContainerHelper;
+import com.sandvoxel.lib.common.util.ModContainerHelper;
 import com.google.common.base.Joiner;
 import jline.internal.Nullable;
 import net.minecraft.command.CommandBase;

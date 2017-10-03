@@ -1,4 +1,4 @@
-package com.example.examplemod.common.util;
+package com.sandvoxel.lib.common.util;
 
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModContainer;

@@ -1,6 +1,5 @@
-package com.example.examplemod.common.util;
+package com.sandvoxel.lib.common.util;
 
-import com.example.examplemod.Lib;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.DimensionManager;
 

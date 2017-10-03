@@ -1,8 +1,7 @@
-package com.example.examplemod.common.blocks;
+package com.sandvoxel.lib.common.blocks;
 
-import com.example.examplemod.API.util.IBlockRender;
+import com.sandvoxel.lib.API.util.IBlockRender;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;

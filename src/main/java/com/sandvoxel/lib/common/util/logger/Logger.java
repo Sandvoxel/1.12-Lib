@@ -1,4 +1,4 @@
-package com.example.examplemod.common.util.logger;
+package com.sandvoxel.lib.common.util.logger;
 
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;

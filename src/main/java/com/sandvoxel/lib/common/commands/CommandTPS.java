@@ -1,14 +1,12 @@
-package com.example.examplemod.common.commands;
+package com.sandvoxel.lib.common.commands;
 
-import com.example.examplemod.Lib;
-import com.example.examplemod.common.util.WorldInfoHelper;
+import com.sandvoxel.lib.common.util.WorldInfoHelper;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.WorldServer;
-import net.minecraft.world.storage.WorldInfo;
 
 import java.text.DecimalFormat;
 
