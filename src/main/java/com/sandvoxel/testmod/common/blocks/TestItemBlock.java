@@ -7,8 +7,9 @@ import net.minecraft.item.ItemBlock;
  * Created by kylekovalchick on 10/3/17.
  */
 public class TestItemBlock extends ItemBlock {
-    public TestItemBlock() {
-        super(new TestBlock());
-        setRegistryName("wdadawdawd");
+    public TestItemBlock(Block block) {
+        super(block);
+        this.setMaxDamage(0);
+        setRegistryName("wdawdawdad");
     }
 }

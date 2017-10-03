@@ -32,7 +32,10 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
+        TestMod.logger.info(RegistryHelper.getBlocks());
+
         for (Block block : RegistryHelper.getBlocks()){
+
             event.getRegistry().register(block);
             TestMod.logger.info(block);
         }

@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -19,6 +20,7 @@ public class TestBlock extends Block {
         super(Material.ROCK);
         setUnlocalizedName(Reference.MODID + ".testblock");
         setRegistryName("testblock");
+        setCreativeTab(CreativeTabs.TRANSPORTATION);
     }
 
     @SideOnly(Side.CLIENT)
