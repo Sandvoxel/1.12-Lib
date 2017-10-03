@@ -12,13 +12,13 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class BlockBace extends Block implements IBlockRender {
+public class BlockBase extends Block implements IBlockRender {
 
    protected final String modid;
    protected String resourcePath;
    protected String internalName = "";
 
-    public BlockBace(Material blockMaterialIn, String resourcePath, String modid) {
+    public BlockBase(Material blockMaterialIn, String resourcePath, String modid) {
         super(blockMaterialIn);
         this.resourcePath = resourcePath;
         this.modid = modid;

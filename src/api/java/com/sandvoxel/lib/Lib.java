@@ -14,41 +14,44 @@ import org.apache.commons.lang3.SystemUtils;
 import java.util.concurrent.TimeUnit;
 
 @Mod(modid = Refrence.MODID, version = Refrence.VERSION)
-public class Lib
-{
-    public static Logger logger = new Logger(Refrence.MOD_NAME);
+public class Lib {
+    public static Logger LOGGER = new Logger(Refrence.MOD_NAME);
 
-    
+    public static Stopwatch STOPWATCH = Stopwatch.createUnstarted();
+
     @EventHandler
-    public void preInit(FMLPreInitializationEvent event){
-        final Stopwatch watch = Stopwatch.createStarted();
-        logger.info("Pre Initialization ( started )");
+    public void preInit(FMLPreInitializationEvent event) {
+        STOPWATCH.start();
+        LOGGER.info("Pre-Initialization - Started");
 
         if (!SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_8)) {
             throw new OutdatedJavaException(String.format("%s requires Java 8 or newer, Please update your java", Refrence.MOD_NAME));
         }
 
-        logger.info("Pre Initialization ( ended after " + watch.elapsed(TimeUnit.MILLISECONDS) + "ms )");
-    }
-    @EventHandler
-    public void init(FMLInitializationEvent event)
-    {
-        final Stopwatch watch = Stopwatch.createStarted();
-        logger.info("Initialization ( started )");
-
-        logger.info("Initialization ( ended after " + watch.elapsed(TimeUnit.MILLISECONDS) + "ms )");
+        LOGGER.info("Pre-Initialization - Finished - " + STOPWATCH.elapsed(TimeUnit.MILLISECONDS) + "ms");
+        STOPWATCH.reset();
     }
 
     @EventHandler
-    public void preInit(FMLPostInitializationEvent event){
-        final Stopwatch watch = Stopwatch.createStarted();
-        logger.info("Post Initialization ( started )");
+    public void init(FMLInitializationEvent event) {
+        STOPWATCH.start();
+        LOGGER.info("Initialization - Started");
 
-        logger.info("Post Initialization ( ended after " + watch.elapsed(TimeUnit.MILLISECONDS) + "ms )");
+        LOGGER.info("Initialization - Finished - " + STOPWATCH.elapsed(TimeUnit.MILLISECONDS) + "ms");
+        STOPWATCH.reset();
     }
 
     @EventHandler
-    public void onServerStartup(FMLServerStartingEvent event){
+    public void preInit(FMLPostInitializationEvent event) {
+        STOPWATCH.start();
+        LOGGER.info("Post-Initialization - Started");
+
+        LOGGER.info("Post-Initialization - Finished - " + STOPWATCH.elapsed(TimeUnit.MILLISECONDS) + "ms");
+        STOPWATCH.reset();
+    }
+
+    @EventHandler
+    public void onServerStartup(FMLServerStartingEvent event) {
         CommandWithSubCommands command = new CommandWithSubCommands();
         command.addSubCommand(new CommandTPS());
         event.registerServerCommand(command);

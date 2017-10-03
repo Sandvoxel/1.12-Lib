@@ -14,20 +14,19 @@ import org.apache.commons.lang3.SystemUtils;
 
 import java.util.concurrent.TimeUnit;
 
-@Mod(modid = "test",version ="1.0")
+@Mod(modid = Reference.MODID, version = Reference.VERSION, name = Reference.MOD_NAME)
 public class TestMod {
-    public static Logger logger = new Logger("testMod");
 
     @SidedProxy(clientSide = "com.sandvoxel.testmod.proxy.ClientProxy", serverSide = "com.sandvoxel.testmod.proxy.ServerProxy")
     public static CommonProxy proxy;
 
+    @Mod.Instance
+    public static TestMod instance;
+    public static Logger logger = new Logger(Reference.MODID);
 
-
-
-    @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
         final Stopwatch watch = Stopwatch.createStarted();
-        logger.info("Pre Initialization ( started )");
+        logger.info("Pre Initialization - Started");
 
         if (!SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_8)) {
             throw new OutdatedJavaException(String.format("%s requires Java 8 or newer, Please update your java", "testMod"));
@@ -35,27 +34,27 @@ public class TestMod {
 
         proxy.preInit(event);
 
-        logger.info("Pre Initialization ( ended after " + watch.elapsed(TimeUnit.MILLISECONDS) + "ms )");
+        logger.info("Pre Initialization - Finished - " + watch.elapsed(TimeUnit.MILLISECONDS) + "ms");
     }
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
         final Stopwatch watch = Stopwatch.createStarted();
-        logger.info("Initialization ( started )");
+        logger.info("Initialization - Started");
 
         proxy.init(event);
 
-        logger.info("Initialization ( ended after " + watch.elapsed(TimeUnit.MILLISECONDS) + "ms )");
+        logger.info("Initialization - Finished - " + watch.elapsed(TimeUnit.MILLISECONDS) + "ms");
     }
 
     @Mod.EventHandler
     public void preInit(FMLPostInitializationEvent event){
         final Stopwatch watch = Stopwatch.createStarted();
-        logger.info("Post Initialization ( started )");
+        logger.info("Post Initialization - Started");
 
-        proxy.PostInit(event);
+        proxy.postInit(event);
 
-        logger.info("Post Initialization ( ended after " + watch.elapsed(TimeUnit.MILLISECONDS) + "ms )");
+        logger.info("Post Initialization - Finished - " + watch.elapsed(TimeUnit.MILLISECONDS) + "ms");
     }
 
 

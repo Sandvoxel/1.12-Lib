@@ -10,7 +10,7 @@ public class ModContainerHelper {
 
         if (container != null) {
             modId = container.getModId();
-            if (modId.isEmpty() == false)
+            if (!modId.isEmpty())
                 return modId;
         }
         throw new RuntimeException("Cannot get Mod Id from FML");
@@ -22,7 +22,7 @@ public class ModContainerHelper {
 
         if (container != null) {
             modName = container.getName();
-            if (modName.isEmpty() == false)
+            if (!modName.isEmpty())
                 return modName;
         }
         throw new RuntimeException("Cannot get Mod Name from FML");
