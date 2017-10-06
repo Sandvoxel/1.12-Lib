@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 /**
  * Created by kylekovalchick on 10/3/17.
  */
-public class TileEntityBace extends BlockBase {
+public class BlockTileBace extends BlockBase {
 
     @Nonnull
     private Class<? extends TileEntity> tileEntityClass;
 
 
 
-    public TileEntityBace(Material blockMaterialIn, String resourcePath, String modid) {
+    public BlockTileBace(Material blockMaterialIn, String resourcePath, String modid) {
         super(blockMaterialIn, resourcePath, modid);
 
     }
