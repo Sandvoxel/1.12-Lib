@@ -8,7 +8,7 @@ import net.minecraft.tileentity.TileEntity;
 /**
  * Created by kylekovalchick on 10/5/17.
  */
-public abstract class TileInventoryBace extends TileEntity implements IInventory {
+public abstract class TileInventoryBace extends TileEntityBace implements IInventory {
 
     public abstract IInventory getInternalInventory();
 
@@ -19,7 +19,7 @@ public abstract class TileInventoryBace extends TileEntity implements IInventory
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return getInternalInventory().isEmpty();
     }
 
     @Override
@@ -29,12 +29,12 @@ public abstract class TileInventoryBace extends TileEntity implements IInventory
 
     @Override
     public ItemStack decrStackSize(int index, int count) {
-        return null;
+        return getInternalInventory().decrStackSize(index,count);
     }
 
     @Override
     public ItemStack removeStackFromSlot(int index) {
-        return null;
+        return getInternalInventory().removeStackFromSlot(index);
     }
 
     @Override
@@ -44,12 +44,12 @@ public abstract class TileInventoryBace extends TileEntity implements IInventory
 
     @Override
     public int getInventoryStackLimit() {
-        return 0;
+        return getInternalInventory().getInventoryStackLimit();
     }
 
     @Override
     public boolean isUsableByPlayer(EntityPlayer player) {
-        return false;
+        return getInternalInventory().isUsableByPlayer(player);
     }
 
     @Override
@@ -64,12 +64,12 @@ public abstract class TileInventoryBace extends TileEntity implements IInventory
 
     @Override
     public boolean isItemValidForSlot(int index, ItemStack stack) {
-        return false;
+        return getInternalInventory().isItemValidForSlot(index,stack);
     }
 
     @Override
     public int getField(int id) {
-        return 0;
+        return getInternalInventory().getField(id);
     }
 
     @Override
@@ -79,7 +79,7 @@ public abstract class TileInventoryBace extends TileEntity implements IInventory
 
     @Override
     public int getFieldCount() {
-        return 0;
+        return getInternalInventory().getFieldCount();
     }
 
     @Override
@@ -89,11 +89,11 @@ public abstract class TileInventoryBace extends TileEntity implements IInventory
 
     @Override
     public String getName() {
-        return null;
+        return getInternalInventory().getName();
     }
 
     @Override
     public boolean hasCustomName() {
-        return false;
+        return getInternalInventory().hasCustomName();
     }
 }
