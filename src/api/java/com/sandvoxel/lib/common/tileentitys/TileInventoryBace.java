@@ -1,14 +1,18 @@
 package com.sandvoxel.lib.common.tileentitys;
 
+import com.sandvoxel.lib.API.inventory.IInventoryHandler;
+import com.sandvoxel.lib.common.inventory.InventoryOperation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 
 /**
  * Created by kylekovalchick on 10/5/17.
  */
-public abstract class TileInventoryBace extends TileEntityBace implements IInventory {
+public abstract class TileInventoryBace extends TileEntityBace implements ISidedInventory, IInventoryHandler {
 
     public abstract IInventory getInternalInventory();
 
@@ -29,7 +33,7 @@ public abstract class TileInventoryBace extends TileEntityBace implements IInven
 
     @Override
     public ItemStack decrStackSize(int index, int count) {
-        return getInternalInventory().decrStackSize(index,count);
+        return getInternalInventory().decrStackSize(index, count);
     }
 
     @Override
@@ -64,7 +68,7 @@ public abstract class TileInventoryBace extends TileEntityBace implements IInven
 
     @Override
     public boolean isItemValidForSlot(int index, ItemStack stack) {
-        return getInternalInventory().isItemValidForSlot(index,stack);
+        return getInternalInventory().isItemValidForSlot(index, stack);
     }
 
     @Override
@@ -96,4 +100,15 @@ public abstract class TileInventoryBace extends TileEntityBace implements IInven
     public boolean hasCustomName() {
         return getInternalInventory().hasCustomName();
     }
+
+    @Override
+    public void saveChanges() {
+
+    }
+
+    @Override
+    public abstract void onChangeInventory(IInventory inv, int slot, InventoryOperation inventoryOperation, ItemStack removedStack, ItemStack newStack);
+
 }
+
+

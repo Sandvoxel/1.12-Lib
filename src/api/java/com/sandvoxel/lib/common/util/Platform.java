@@ -1,8 +1,10 @@
 package com.sandvoxel.lib.common.util;
 
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 
+import javax.annotation.Nullable;
 import java.util.Map;
 
 /**
@@ -49,6 +51,9 @@ public class Platform {
         return stringbuilder.toString();
 }
 
+    public static boolean isSameItem(@Nullable ItemStack itemStack1, @Nullable ItemStack itemStack2) {
+        return itemStack1 != ItemStack.EMPTY && itemStack2 != ItemStack.EMPTY && itemStack1.isItemEqual(itemStack2);
+    }
 
 
 }
