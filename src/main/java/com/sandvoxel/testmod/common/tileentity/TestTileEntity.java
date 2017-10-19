@@ -5,17 +5,29 @@ import com.sandvoxel.lib.common.inventory.InternalInventory;
 import com.sandvoxel.lib.common.inventory.InventoryOperation;
 import com.sandvoxel.lib.common.tileentitys.TileInventoryBace;
 import com.sandvoxel.testmod.TestMod;
+import com.sandvoxel.testmod.common.blocks.TestBlock;
+import com.sandvoxel.testmod.common.itemblocks.TestItemBlock;
+import net.minecraft.block.BlockAnvil;
+import net.minecraft.block.BlockBone;
+import net.minecraft.client.Minecraft;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
+import net.minecraft.util.math.BlockPos;
 
 /**
  * Created by kylekovalchick on 10/3/17.
  */
 public class TestTileEntity extends TileInventoryBace implements ITickable {
     public IInventory inventory = new InternalInventory(this,4);
+
+    public TestTileEntity() {
+        inventory.setInventorySlotContents(0, new ItemStack(Items.COAL,64));
+
+    }
 
     @Override
     public void update() {

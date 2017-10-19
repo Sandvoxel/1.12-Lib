@@ -1,6 +1,7 @@
 package com.sandvoxel.lib.common.inventory;
 
 import com.sandvoxel.lib.API.inventory.IInventoryHandler;
+import com.sandvoxel.lib.Lib;
 import com.sandvoxel.lib.common.util.Platform;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -9,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 
+import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -17,7 +19,6 @@ import java.util.Iterator;
  */
 public class InternalInventory implements IInventory, Iterable<ItemStack> {
 
-    protected NonNullList<ItemStack> itemStacks = NonNullList.create();
     protected int size;
     protected int maxsize = 0;
     public boolean enableClientEvents = false;
@@ -32,6 +33,8 @@ public class InternalInventory implements IInventory, Iterable<ItemStack> {
         for (int i = 0; i < size; i++) {
             this.inventory[i]=ItemStack.EMPTY;
         }
+        Lib.LOGGER.info(this.getStackInSlot(0));
+
     }
 
     protected boolean eventsEnabled() {
@@ -85,12 +88,12 @@ public class InternalInventory implements IInventory, Iterable<ItemStack> {
             return newStack;
         }
 
-        return null;
+        return ItemStack.EMPTY;
     }
 
     @Override
     public ItemStack removeStackFromSlot(int index) {
-        return null;
+        return ItemStack.EMPTY;
     }
 
     @Override
