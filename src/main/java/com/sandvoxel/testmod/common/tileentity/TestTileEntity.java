@@ -26,7 +26,6 @@ public class TestTileEntity extends TileInventoryBace implements ITickable {
 
     @Override
     public void update() {
-        TestMod.logger.info(inventory.getStackInSlot(2));
     }
 
     @Override
