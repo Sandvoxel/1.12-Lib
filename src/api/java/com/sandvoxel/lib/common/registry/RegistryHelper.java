@@ -21,7 +21,7 @@ public class RegistryHelper {
     public static List<ItemBlock> items = new ArrayList<>();
 
     public static void addBlockToRegistry(String modid ,Class<? extends Block> blockClass, Class<? extends ItemBlock> itemBlockClass){
-        Block block = null;
+        Block block;
         ItemBlock itemBlock;
         String internalName;
 

@@ -43,7 +43,7 @@ public abstract class TileInventoryBace extends TileEntityBace implements ISided
 
     @Override
     public void setInventorySlotContents(int index, ItemStack stack) {
-
+        getInternalInventory().setInventorySlotContents(index,stack);
     }
 
     @Override

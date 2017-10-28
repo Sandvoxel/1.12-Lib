@@ -33,7 +33,6 @@ public class InternalInventory implements IInventory, Iterable<ItemStack> {
         for (int i = 0; i < size; i++) {
             this.inventory[i]=ItemStack.EMPTY;
         }
-        Lib.LOGGER.info(this.getStackInSlot(0));
 
     }
 

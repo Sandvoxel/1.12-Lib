@@ -24,14 +24,9 @@ import net.minecraft.util.math.BlockPos;
 public class TestTileEntity extends TileInventoryBace implements ITickable {
     public IInventory inventory = new InternalInventory(this,4);
 
-    public TestTileEntity() {
-        inventory.setInventorySlotContents(0, new ItemStack(Items.COAL,64));
-
-    }
-
     @Override
     public void update() {
-        TestMod.logger.info(inventory.getStackInSlot(0));
+        TestMod.logger.info(inventory.getStackInSlot(2));
     }
 
     @Override
