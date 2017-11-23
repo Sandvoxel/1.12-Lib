@@ -21,7 +21,7 @@ compileJava {
 }
 
 minecraft {
-    version = "1.12.2-14.23.0.2491"
+    version = "1.12.2-14.23.0.2552"
     runDir = "run"
     
     // the mappings can be changed at any time, and must be in the following format.
@@ -33,7 +33,34 @@ minecraft {
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
+repositories {
+    mavenLocal()
+    mavenCentral()
+
+    maven {
+        url 'http://maven.mcmoddev.com'
+    }
+
+    maven { url "http://maven.amadornes.com/" }
+
+    maven {
+        // location of the maven that hosts JEI files
+        name = "Progwml6 maven"
+        url = "http://dvs1.progwml6.com/files/maven"
+    }
+    maven {
+        // location of a maven mirror for JEI files, as a fallback
+        name = "ModMaven"
+        url = "modmaven.k-4u.nl"
+    }
+}
+
 dependencies {
+    compile "net.darkhax.tesla:Tesla-1.12.2:1.0.63"
+
+    runtime "mezz.jei:jei_1.12.2:4.8.2.123"
+    //deobfCompile "mezz.jei:jei_1.11.2:4.5.0.295:api"
+
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"
